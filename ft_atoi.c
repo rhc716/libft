@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 23:17:04 by hroh              #+#    #+#             */
-/*   Updated: 2020/09/29 00:14:40 by hroh             ###   ########.fr       */
+/*   Updated: 2020/09/30 14:24:20 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_atoi(const char *str)
 		sign = -1;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while (ft_digit(str[i]))
+	while (ft_isdigit(str[i]))
 	{
 		re = re * 10 + str[i] - '0';
 		i++;
