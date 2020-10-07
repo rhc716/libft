@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 16:43:41 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/06 16:49:26 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/07 20:08:06 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
-	unsigned char *t_s1;
-	unsigned char *t_s2;
+	int				i;
+	unsigned char	*t_s1;
+	unsigned char	*t_s2;
 
 	i = 0;
 	t_s1 = s1;

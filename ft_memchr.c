@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 16:30:34 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/06 16:43:13 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/07 20:07:57 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memchr(const void *src, int c, size_t n)
 {
-	int i;
-	unsigned char *s;
+	int				i;
+	unsigned char	*s;
 
 	i = 0;
 	s = src;

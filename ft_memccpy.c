@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 14:24:34 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/06 15:03:43 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/07 20:07:49 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	int i;
-	unsigned char *d;
-	unsigned char *s;
+	int				i;
+	unsigned char	*d;
+	unsigned char	*s;
 
 	i = 0;
 	d = dest;
