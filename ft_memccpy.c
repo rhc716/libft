@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 14:24:34 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/08 16:02:10 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/08 16:48:25 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 		}
 		i++;
 	}
-	return (dest);
+	return (0);
 }

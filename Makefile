@@ -6,7 +6,7 @@
 #    By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 15:23:04 by hroh              #+#    #+#              #
-#    Updated: 2020/10/08 16:10:52 by hroh             ###   ########.fr        #
+#    Updated: 2020/10/08 16:32:49 by hroh             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ $(NAME): $(OBJS)
 
 all: $(NAME)
 
-clean: rm -f $(OBJS)
+clean: 
+		rm -f $(OBJS)
 
 fclean: clean
 		rm -f $(NAME)

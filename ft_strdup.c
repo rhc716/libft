@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 18:56:59 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/07 19:08:00 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/08 17:45:23 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ char	*ft_strdup(const char *str)
 	len = strlen(str);
 	if (!(re = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	ft_strlcpy(re, str, len);
+	ft_strlcpy(re, str, len + 1);
 	return (re);
 }
