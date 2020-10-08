@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 04:03:47 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/05 10:51:34 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/08 16:09:33 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int		i;
+	size_t	i;
 	int		j;
 
 	i = 0;
@@ -31,7 +31,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 					break ;
 				}
 				if (little[j + 1] == 0)
-					return (&big[i]);
+					return ((char *)big + i);
 				j++;
 			}
 		}

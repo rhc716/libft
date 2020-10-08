@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 15:06:15 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/05 10:14:37 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/08 16:13:59 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	int		i;
+	size_t	i;
 	size_t	dest_len;
 	size_t	src_len;
-	size_t	s;
 
 	i = 0;
 	dest_len = ft_strlen(dest);

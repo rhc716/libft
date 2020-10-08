@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 11:06:53 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/08 13:02:03 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/08 16:07:44 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,10 @@ char		**ft_split(char const *s, char c)
 	if (!(re = (char **)malloc(sizeof(char *) * (wd_cnt + 1))))
 		return (NULL);
 	i = 0;
-	wd_start = &s[0];
+	wd_start = (char *)s;
 	while (i < wd_cnt)
 	{
-		get_word_length(wd_start, wd_len, c);
+		get_word_length(wd_start, &wd_len, c);
 		if (!(re[i] = (char *)malloc(sizeof(char) * (wd_len + 1))))
 			return (all_free(re));
 		ft_strlcpy(re[i], wd_start, wd_len + 1);

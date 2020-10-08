@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 14:13:29 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/07 20:07:10 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/08 16:09:51 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *dest, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*d;
 
 	i = 0;

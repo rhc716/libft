@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 13:58:10 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/07 20:08:26 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/08 16:12:33 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *dest, int val, size_t s)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*d;
 
 	i = 0;
@@ -24,4 +24,5 @@ void	*ft_memset(void *dest, int val, size_t s)
 		d[i] = val;
 		i++;
 	}
+	return (dest);
 }
