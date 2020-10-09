@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 12:30:03 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/08 13:00:02 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/09 13:26:52 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,24 @@ static int	get_len(int n)
 
 char		*ft_itoa(int n)
 {
-	char	*re;
-	int		len;
+	char			*re;
+	unsigned int	us_n;
+	int				sign;
+	int				len;
 
 	len = get_len(n);
 	re = (char *)malloc(sizeof(char) * (len + 1));
-	if (n < 0)
-	{
-		re[0] = '-';
-		n *= -1;
-	}
+	sign = (n < 0) ? -1 : 1;
+	us_n = (n < 0) ? -1 * n : n;
 	re[len] = 0;
 	len--;
 	while (len >= 0)
 	{
-		re[len] = '0' + (n % 10);
-		n = n / 10;
+		re[len] = '0' + (us_n % 10);
+		us_n = us_n / 10;
 		len--;
 	}
+	if (sign == -1)
+		re[0] = '-';
 	return (re);
 }

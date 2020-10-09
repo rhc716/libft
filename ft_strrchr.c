@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 03:55:22 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/08 16:15:29 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/09 13:10:29 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ char	*ft_strrchr(const char *str, int c)
 		}
 		s--;
 	}
+	if (str[s] == c)
+		return ((char *)str + s);
 	return (0);
 }

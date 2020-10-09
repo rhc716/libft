@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 22:27:40 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/08 16:33:07 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/09 13:15:25 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
-int					ft_lower(int c);
+int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_isspace(int c);
 int					ft_atoi(const char *str);
