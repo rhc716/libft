@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 12:30:03 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/12 14:29:29 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/12 15:28:29 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char		*ft_itoa(int n)
 	int				len;
 
 	len = get_len(n);
-	if(!(re = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(re = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	sign = (n < 0) ? -1 : 1;
 	us_n = (n < 0) ? -1 * n : n;
