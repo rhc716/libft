@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 10:48:15 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/09 12:27:10 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/12 14:27:35 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (s1[i] != s2[i])
+		if (s1[i] != s2[i] || !s1[i] || !s2[2])
 		{
 			return (s1[i] - s2[i]);
 		}
