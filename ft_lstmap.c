@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 17:49:29 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/09 18:57:10 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/14 14:05:17 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list *curr_new;
 	t_list *curr_old;
 
-	if (lst == NULL || f == NULL || del == NULL)
+	if (lst == NULL)
 		return (NULL);
 	if (!(new_first = ft_lstnew(f(lst->content))))
 		return (NULL);
