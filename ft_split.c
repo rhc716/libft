@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 11:06:53 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/12 15:47:43 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/14 20:04:57 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	get_words_count(char const *str, char c)
 		}
 		i++;
 	}
-	if (str[i - 1] != c)
+	if (str[0] != '\0' && str[i - 1] != c)
 		wd_cnt++;
 	return (wd_cnt);
 }
@@ -56,14 +56,14 @@ static int	get_word_length(char *start, int *start_move, char c)
 	int word_len;
 
 	word_len = 0;
-	while (start[*start_move] == c)
+	while (start[*start_move] && start[*start_move] == c)
 		(*start_move)++;
-	while (start[*start_move] != c)
+	while (start[*start_move] && start[*start_move] != c)
 	{
 		word_len++;
 		(*start_move)++;
 	}
-	while (start[*start_move] == c)
+	while (start[*start_move] && start[*start_move] == c)
 		(*start_move)++;
 	return (word_len);
 }
@@ -96,15 +96,22 @@ static int	split_string_words(char **re, char *start, char c, int wd_cnt)
 char		**ft_split(char const *s, char c)
 {
 	char	**re;
-	int		wd_cnt;
 	char	*start;
+	int		wd_cnt;
 	int		i;
 
-	if (!s)
+	if (!s || !c)
 		return (NULL);
 	wd_cnt = get_words_count(s, c);
+	if (s[0] == '\0')
+		wd_cnt = 1;
 	if (!(re = (char **)malloc(sizeof(char *) * (wd_cnt + 1))))
 		return (NULL);
+	if (s[0] == '\0')
+	{
+		re[0] = NULL;
+		return (re);
+	}
 	i = 0;
 	start = (char *)s;
 	while (start[i] == c)
