@@ -6,40 +6,15 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 11:06:53 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/14 20:04:57 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/19 15:40:49 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_words_count(char const *str, char c)
+static char			**ft_all_free(char **re)
 {
-	int i;
-	int wd_cnt;
-
-	i = 0;
-	wd_cnt = 0;
-	while (str[i] && str[i] == c)
-		i++;
-	while (str[i])
-	{
-		if (str[i] == c)
-		{
-			wd_cnt++;
-			while (str[i] && str[i] == c)
-				i++;
-			continue;
-		}
-		i++;
-	}
-	if (str[0] != '\0' && str[i - 1] != c)
-		wd_cnt++;
-	return (wd_cnt);
-}
-
-static char	**all_free(char **re)
-{
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (re[i])
@@ -51,73 +26,76 @@ static char	**all_free(char **re)
 	return (NULL);
 }
 
-static int	get_word_length(char *start, int *start_move, char c)
+static unsigned int	ft_get_wd_cnt(char const *s, char c)
 {
-	int word_len;
+	unsigned int	i;
+	unsigned int	wd_cnt;
 
-	word_len = 0;
-	while (start[*start_move] && start[*start_move] == c)
-		(*start_move)++;
-	while (start[*start_move] && start[*start_move] != c)
-	{
-		word_len++;
-		(*start_move)++;
-	}
-	while (start[*start_move] && start[*start_move] == c)
-		(*start_move)++;
-	return (word_len);
-}
-
-static int	split_string_words(char **re, char *start, char c, int wd_cnt)
-{
-	int	i;
-	int	word_len;
-	int	start_move;
-
+	if (!s[0])
+		return (0);
 	i = 0;
-	word_len = 0;
-	start_move = 0;
-	while (i < wd_cnt)
+	wd_cnt = 0;
+	while (s[i] && s[i] == c)
+		i++;
+	while (s[i])
 	{
-		start += start_move;
-		start_move = 0;
-		word_len = get_word_length(start, &start_move, c);
-		if (!(re[i] = (char *)malloc(sizeof(char) * (word_len + 1))))
+		if (s[i] == c)
 		{
-			all_free(re);
-			return (-1);
+			wd_cnt++;
+			while (s[i] && s[i] == c)
+				i++;
+			continue ;
 		}
-		ft_strlcpy(re[i++], start, word_len + 1);
+		i++;
 	}
-	re[i] = NULL;
-	return (0);
+	if (s[i - 1] != c)
+		wd_cnt++;
+	return (wd_cnt);
 }
 
-char		**ft_split(char const *s, char c)
+static void			ft_get_next_wd(char **next_wd, unsigned int *next_wd_len,
+					char c)
 {
-	char	**re;
-	char	*start;
-	int		wd_cnt;
-	int		i;
+	unsigned int i;
 
-	if (!s || !c)
+	*next_wd += *next_wd_len;
+	*next_wd_len = 0;
+	i = 0;
+	while (**next_wd && **next_wd == c)
+		(*next_wd)++;
+	while ((*next_wd)[i])
+	{
+		if ((*next_wd)[i] == c)
+			return ;
+		(*next_wd_len)++;
+		i++;
+	}
+}
+
+char				**ft_split(char const *s, char c)
+{
+	char			**re;
+	char			*next_wd;
+	unsigned int	next_wd_len;
+	unsigned int	wd_cnt;
+	unsigned int	i;
+
+	if (!s)
 		return (NULL);
-	wd_cnt = get_words_count(s, c);
-	if (s[0] == '\0')
-		wd_cnt = 1;
+	wd_cnt = ft_get_wd_cnt(s, c);
 	if (!(re = (char **)malloc(sizeof(char *) * (wd_cnt + 1))))
 		return (NULL);
-	if (s[0] == '\0')
-	{
-		re[0] = NULL;
-		return (re);
-	}
 	i = 0;
-	start = (char *)s;
-	while (start[i] == c)
+	next_wd = (char *)s;
+	next_wd_len = 0;
+	while (i < wd_cnt)
+	{
+		ft_get_next_wd(&next_wd, &next_wd_len, c);
+		if (!(re[i] = (char *)malloc(sizeof(char) * (next_wd_len + 1))))
+			return (ft_all_free(re));
+		ft_strlcpy(re[i], next_wd, next_wd_len + 1);
 		i++;
-	start += i;
-	if (split_string_words(re, start, c, wd_cnt) == -1)
-		return (NULL);
+	}
+	re[i] = NULL;
 	return (re);
 }
