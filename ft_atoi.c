@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 23:17:04 by hroh              #+#    #+#             */
-/*   Updated: 2020/09/30 14:24:20 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/19 15:48:10 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int i;
-	int sign;
-	int re;
+	int		i;
+	long	sign;
+	long	re;
 
 	i = 0;
 	sign = 1;
@@ -30,6 +30,10 @@ int	ft_atoi(const char *str)
 	while (ft_isdigit(str[i]))
 	{
 		re = re * 10 + str[i] - '0';
+		if (re > 2147483647 && sign == 1)
+			return (-1);
+		if (re > 2147483648 && sign == -1)
+			return (0);
 		i++;
 	}
 	return (re * sign);
