@@ -6,13 +6,13 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 19:24:42 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/26 15:03:10 by hroh             ###   ########.fr       */
+/*   Updated: 2020/11/06 21:03:03 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2, int free_case)
 {
 	char	*re;
 	size_t	s1_len;
@@ -27,6 +27,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!(re = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1))))
 		return (NULL);
 	ft_strlcpy(re, s1, s1_len + 1);
+	if (free_case == 1 || free_case == 3)
+		free(s1);
 	ft_strlcpy(re + s1_len, s2, s2_len + 1);
+	if (free_case == 2 || free_case == 3)
+		free(s2);
 	return (re);
 }

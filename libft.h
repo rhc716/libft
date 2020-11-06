@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 22:27:40 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/14 15:38:02 by hroh             ###   ########.fr       */
+/*   Updated: 2020/11/06 21:03:27 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ int					ft_isprint(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_isspace(int c);
+int					ft_putchar(int c);
+int					ft_nbrlen(long long int n);
+void				ft_putstr(char const *s);
+int					ft_isupper(int c);
 int					ft_atoi(const char *str);
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
@@ -50,7 +54,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strdup(const char *str);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
-char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoin(char *s1, char *s2, int free_case);
 char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
