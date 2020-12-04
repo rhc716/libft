@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 22:27:40 by hroh              #+#    #+#             */
-/*   Updated: 2020/11/06 21:03:27 by hroh             ###   ########.fr       */
+/*   Updated: 2020/12/04 21:52:41 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef GNL_BUFFER_SIZE
+#  define GNL_BUFFER_SIZE 5000
+# endif
+# ifndef GNL_OPEN_MAX
+#  define GNL_OPEN_MAX 32
+# endif
 
 typedef struct		s_list
 {
@@ -73,4 +80,5 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *)
 					, void (*del)(void *));
+int					get_next_line(int fd, char **line);
 #endif
