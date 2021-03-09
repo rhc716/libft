@@ -6,13 +6,13 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:10:57 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/09 20:12:19 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/09 20:19:50 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_2d_array(void **array, int len)
+void	ft_free_2d_arr(void **array, int len)
 {
 	int i;
 
