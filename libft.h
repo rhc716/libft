@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 22:27:40 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/09 18:45:37 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/09 20:11:14 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,5 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *)
 int					get_next_line(int fd, char **line);
 void				ft_sort_2d_c_arr(char **arr);
 char				**ft_strsdup(char *str[]);
+void				free_2d_array(void **array, int len);
 #endif
