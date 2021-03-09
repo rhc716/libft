@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 22:27:40 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/01 15:19:25 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/09 18:45:37 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int					ft_nbrlen(long long int n);
 void				ft_putstr(char const *s);
 int					ft_isupper(int c);
 int					ft_atoi(const char *str);
+long				ft_atoi_long(const char *str);
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);

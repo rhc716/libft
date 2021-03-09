@@ -6,7 +6,7 @@
 #    By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 15:23:04 by hroh              #+#    #+#              #
-#    Updated: 2021/03/01 15:19:32 by hroh             ###   ########.fr        #
+#    Updated: 2021/03/09 18:45:47 by hroh             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FILES = ft_calloc.c ft_isascii.c ft_isspace.c ft_memccpy.c ft_memcpy.c \
 		ft_strjoin.c ft_strlen.c ft_strnstr.c ft_substr.c ft_bzero.c \
 		ft_isalpha.c ft_isprint.c ft_memcmp.c ft_memset.c ft_putnbr_fd.c \
 		ft_strchr.c ft_strlcat.c ft_strmapi.c ft_strrchr.c ft_tolower.c \
-		ft_putchar.c ft_putstr.c ft_isupper.c  ft_nbrlen.c get_next_line.c ft_sort_2d_c_arr.c ft_strsdup.c
+		ft_putchar.c ft_putstr.c ft_isupper.c  ft_nbrlen.c get_next_line.c ft_sort_2d_c_arr.c ft_strsdup.c ft_atoi_long
 FILES_B = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 

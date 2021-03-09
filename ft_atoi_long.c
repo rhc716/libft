@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_long.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 23:17:04 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/09 18:46:12 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/09 18:45:01 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi_long(const char *str)
 {
 	int		i;
 	long	sign;
@@ -30,10 +30,6 @@ int	ft_atoi(const char *str)
 	while (str[i] && ft_isdigit(str[i]))
 	{
 		re = re * 10 + str[i] - '0';
-		if (re > 2147483647 && sign == 1)
-			return (-1);
-		if (re > 2147483648 && sign == -1)
-			return (0);
 		i++;
 	}
 	return (re * sign);
